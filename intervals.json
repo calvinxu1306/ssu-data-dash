@@ -1,0 +1,96 @@
+{
+  "off_market": {
+    "split_points": {
+      "Condo Apt": 610991.9713192051,
+      "Condo Townhouse": 731434.9755689951,
+      "Detached": 1274365.6585660316,
+      "Freehold Townhouse": 1044451.3401198881,
+      "Semi-Detached": 1104126.80317535
+    },
+    "half_widths": {
+      "80": {
+        "Condo Apt / cheaper": 0.121,
+        "Condo Apt / dearer": 0.1382,
+        "Condo Townhouse / cheaper": 0.1191,
+        "Condo Townhouse / dearer": 0.133,
+        "Detached / cheaper": 0.1737,
+        "Detached / dearer": 0.2175,
+        "Freehold Townhouse / cheaper": 0.1433,
+        "Freehold Townhouse / dearer": 0.2113,
+        "Semi-Detached / cheaper": 0.1743,
+        "Semi-Detached / dearer": 0.1957
+      },
+      "50": {
+        "Condo Apt / cheaper": 0.0618,
+        "Condo Apt / dearer": 0.0689,
+        "Condo Townhouse / cheaper": 0.0626,
+        "Condo Townhouse / dearer": 0.0673,
+        "Detached / cheaper": 0.0862,
+        "Detached / dearer": 0.1065,
+        "Freehold Townhouse / cheaper": 0.0798,
+        "Freehold Townhouse / dearer": 0.1045,
+        "Semi-Detached / cheaper": 0.0911,
+        "Semi-Detached / dearer": 0.0994
+      }
+    },
+    "homes_per_group": {
+      "Condo Apt / cheaper": 1837,
+      "Condo Apt / dearer": 1836,
+      "Detached / cheaper": 1342,
+      "Detached / dearer": 1341,
+      "Semi-Detached / dearer": 425,
+      "Semi-Detached / cheaper": 425,
+      "Condo Townhouse / cheaper": 277,
+      "Condo Townhouse / dearer": 277,
+      "Freehold Townhouse / cheaper": 146,
+      "Freehold Townhouse / dearer": 146
+    }
+  },
+  "list_aware": {
+    "split_points": {
+      "Condo Apt": 589427.9967962921,
+      "Condo Townhouse": 714888.0080248518,
+      "Detached": 1250549.8735536158,
+      "Freehold Townhouse": 1045020.4806653284,
+      "Semi-Detached": 1126930.3245316288
+    },
+    "half_widths": {
+      "80": {
+        "Condo Apt / cheaper": 0.0632,
+        "Condo Apt / dearer": 0.066,
+        "Condo Townhouse / cheaper": 0.0753,
+        "Condo Townhouse / dearer": 0.0693,
+        "Detached / cheaper": 0.0947,
+        "Detached / dearer": 0.0899,
+        "Freehold Townhouse / cheaper": 0.0894,
+        "Freehold Townhouse / dearer": 0.0809,
+        "Semi-Detached / cheaper": 0.1147,
+        "Semi-Detached / dearer": 0.1054
+      },
+      "50": {
+        "Condo Apt / cheaper": 0.0334,
+        "Condo Apt / dearer": 0.0348,
+        "Condo Townhouse / cheaper": 0.0368,
+        "Condo Townhouse / dearer": 0.0387,
+        "Detached / cheaper": 0.0491,
+        "Detached / dearer": 0.0445,
+        "Freehold Townhouse / cheaper": 0.0493,
+        "Freehold Townhouse / dearer": 0.0469,
+        "Semi-Detached / cheaper": 0.0537,
+        "Semi-Detached / dearer": 0.0519
+      }
+    },
+    "homes_per_group": {
+      "Condo Apt / cheaper": 1837,
+      "Condo Apt / dearer": 1836,
+      "Detached / cheaper": 1342,
+      "Detached / dearer": 1341,
+      "Semi-Detached / dearer": 425,
+      "Semi-Detached / cheaper": 425,
+      "Condo Townhouse / cheaper": 277,
+      "Condo Townhouse / dearer": 277,
+      "Freehold Townhouse / cheaper": 146,
+      "Freehold Townhouse / dearer": 146
+    }
+  }
+}

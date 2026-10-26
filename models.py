@@ -8,6 +8,7 @@ make_model() picks the model for each track. The two starting models are baselin
 deliberately simple, so you can measure how much your own ideas add.
 """
 import numpy as np
+import pandas as pd
 from sklearn.ensemble import HistGradientBoostingRegressor
 
 import features
@@ -15,6 +16,7 @@ import features
 
 def make_model(track):
     """Return a fresh, untrained model for "off_market" or "list_aware"."""
+    return NeighbourhoodMedianBaseline()   # TEMPORARY
     if track == "list_aware":
         return ListPriceBaseline()
         # return FeatureModel(features.list_aware_features)   # try this instead
@@ -90,3 +92,25 @@ class FeatureModel:
 
     def predict(self, homes):
         return np.exp(self.model.predict(self.make_features(homes)))
+
+    
+class NeighbourhoodMedianBaseline:
+    """The handout's maximum-error baseline: the median sale of the same type in the
+    same community over the previous 12 months. The bar we must beat."""
+
+    def fit(self, train):
+        last_sale = train["date_sold"].max()
+        recent = train[train["date_sold"]>= last_sale - pd.DateOffset(months=12)]
+
+        self.by_type_and_community = (recent.groupby(["house_type_name", "community"])["sold_price"].median().rename("median_price"))
+
+        self.by_type = recent.groupby("house_type_name")["sold_price"].median()
+
+        return self
+
+    def predict(self, homes):
+        # Look up each home's (type, community) median. Where there isn't one, use
+        # its type median. Return a numpy array in the same order as homes.
+        price = homes.join(self.by_type_and_community, on=["house_type_name", "community"])["median_price"]
+        fallback = homes["house_type_name"].map(self.by_type)
+        return price.fillna(fallback).to_numpy(dtype=float)

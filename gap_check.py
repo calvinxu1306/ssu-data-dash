@@ -7,7 +7,8 @@ on sales before a cutoff and predicts the four months after it.
 
 Usage, from the repo folder:
     python gap_check.py                          every model, every fold
-    python gap_check.py max_error,starter_gbm    only these models (quicker)
+    python gap_check.py ours dev                 our model on the dev fold (the one to use while working)
+    python gap_check.py max_error,starter_gbm    only these models
     python gap_check.py starter_gbm dev          one model, one fold
 
 Use the dev fold to choose features and settings. Run the gapA and gapB folds once,
@@ -36,6 +37,7 @@ CANDIDATES = {
                               else models.NearestSalesBaseline(k=10)),
     "starter_gbm": lambda track: models.FeatureModel(
         features.list_aware_features if track == "list_aware" else features.off_market_features),
+    "ours": models.make_model,
 }
 TRACKS = ["off_market", "list_aware"]
 
